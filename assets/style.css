@@ -1,0 +1,21 @@
+:root {
+    --primary: #000000;
+    --secondary: #c0995a;
+    --tertiary: #ffffff;
+}
+
+.mdl-grid {
+    flex-wrap: nowrap;
+    border: 3px black;
+}
+
+.hero {
+        text-align: center;
+        color: black;
+        background-image: url("../assets/bar-209148_1920.jpg");
+        position: relative;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        opacity: 0.5;
+}
