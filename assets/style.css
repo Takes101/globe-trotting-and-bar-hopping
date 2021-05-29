@@ -7,15 +7,34 @@
 .mdl-grid {
     flex-wrap: nowrap;
     border: 3px black;
+    margin-left: 15px;
+}
+.mdl-cell--8-col {
+    margin-bottom: 15px;
 }
 
-.hero {
+#hero {
         text-align: center;
-        color: black;
-        background-image: url("../assets/bar-209148_1920.jpg");
+        color: white;
+        background-image: url("../assets/BForcev1.png");
         position: relative;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        opacity: 0.5;
+        min-height: 225px;
+}
+
+.list-header {
+    font-weight: bold;
+}
+
+.generator {
+    color:var(--secondary);
+    font-weight: bold;
+    margin-left: 24px;
+    text-align: center;
+}
+
+#brewerySearch {
+    background-color: var(--secondary);
 }
