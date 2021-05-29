@@ -1,7 +1,6 @@
 var storedBrewery = JSON.parse(localStorage.getItem('brewery')) || [];
 
 
-
 $("#brewerySearch").click(function () {
 
     let searchCity = $('.dropBtn').val();
