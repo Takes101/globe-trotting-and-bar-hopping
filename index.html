@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <title>Document</title>
+    <title>Brewed Force</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
@@ -14,11 +14,13 @@
 </head>
 
 <body>
-    <header class="hero">
-        <h1 class="app-title">Brewed Force</h1>
-        <p>Search for
-        </p>
-    </header>
+        <header class="mdl-layout__header mdl-layout__header--transparent" id="hero">
+            <div class="mdl-layout__header-row">
+            <!-- Title -->
+                <span class="mdl-layout-title">Brewed Force search for Beer</span>
+            </div>
+        </header>
+        
 
     <div class="mdl-grid">
         <div class="mdl-cell mdl-cell--4-col">
@@ -79,31 +81,32 @@
                             <option value="Wisconsin">Wisconsin</option>
                             <option value="Wyoming">Wyoming</option>
                         </select>
-                        
                         <button id="brewerySearch" class="city-btn mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Search</button>
+                        <div>
+                            <p id="inputError" style="color:red"></p>
+                        </div>
                     </div>
-                    <div>
-                        <p id="inputError" style="color:red"></p>
-                    </div>
+                    
                 </div>
-                <div id="cityName">
-
-
-                </div>
-
+                <div id="cityName"></div>
                 <button id="clear">Delete City List</button>
+            </div>
+
+        </div>
                 <!-- return pub/brewery info-->
-                <div class="mdl-cell mdl-cell--8-col">beer list
-                </div>
-            </div>
+        <div class="mdl-cell mdl-cell--8-col">
+            <h2 class="list-header">Beer Guide</h2>
         </div>
-        <!-- return random beer generator-->
-        <div class="mdl-grid">
-            <div class="mdl-cell mdl-cell--4-col">
-                Beer Generator
-            </div>
+    </div>
+
+
+    <!-- return random beer generator-->
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--10-col">
+        <h3 class="generator">Beer Roulette</h3>
         </div>
-        <script src="assets/js/script.js"></script>
+    </div>
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>
