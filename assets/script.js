@@ -55,3 +55,28 @@ $("#brewerySearch").click(function () {
 
 });
 //need to get the cities that have been searched to persist to the page, and when clicked, display the brewery list
+
+
+
+// Random Beer Generator
+
+// onclick function for button
+$('#random-beer').on('click', function() {
+    //ajax code here with random api (No Params needed)
+    $.ajax({
+        url: 'https://api.punkapi.com/v2/beers/random',
+        method: 'GET'
+    })
+        // simple console.log to ensure response is returned in Console
+       .then(function(response) {
+            console.log(response);
+
+        })
+});
+    
+
+
+    
+   
+
+
