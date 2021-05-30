@@ -1,43 +1,3 @@
-//fetch brewery data using example city
-fetch(
-    'https://api.openbrewerydb.org/breweries?by_city=san_diego'
-)
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (response) {
-        var responseContainerEl = document.querySelector('.placeholder');
-        // Create an '<li>' element
-        var breweryInfo = document.createElement('li');
-        // Append that element's 'response from the URL to the 'li' element
-        breweryInfo.append(response[0].name);
-        
-        //repeat for each of the 5 breweries
-        var breweryInfo2 = document.createElement('li');
-        breweryInfo2.append(response[1].name);
-
-        var breweryInfo3 = document.createElement('li');
-        breweryInfo3.append(response[2].name);
-
-        var breweryInfo4 = document.createElement('li');
-        breweryInfo4.append(response[3].name);
-
-        var breweryInfo5 = document.createElement('li');
-        breweryInfo5.append(response[4].name);
-        // Append the '<p>' element to the page for each brewery, display brewery data on page
-        responseContainerEl.appendChild(breweryInfo);
-        responseContainerEl.appendChild(breweryInfo2);
-        responseContainerEl.appendChild(breweryInfo3);
-        responseContainerEl.appendChild(breweryInfo4);
-        responseContainerEl.appendChild(breweryInfo5);
-        console.log(response);
-    });
-
-
-
-
-
-
 var storedBrewery = JSON.parse(localStorage.getItem('brewery')) || [];
 
 
@@ -62,18 +22,36 @@ $("#brewerySearch").click(function () {
             } else {
                 console.log('success ', response);
                 for (let i = 0; i < response.length; i++) {
-                    console.log(response[i]);
-                    let cityDiv = $('<BUTTON>').append(response[i].name)
-                    $('#cityName').append(cityDiv);
+                    //Cody updated from button to li element here
+                    let cityDiv = $('<li>').append(response[i].name, response[i].website_url)
+                    $('#breweryName').append(cityDiv);
                     
-                    storedBrewery.push(response[i].name);
+                    storedBrewery.push(response[i].name, response[i].website_url);
                     localStorage.setItem('brewery', JSON.stringify(storedBrewery));
                 }
             }
         })
 });
-
+//is there a way to update this to where it only clears the breweries when we click clear, not the new city button as well?
 $('#clear').on('click', function() {
     localStorage.clear();
     location.reload()
+    
 })
+
+//function to store cities to local storage
+//var storedCity = (localStorage.getItem('city')) || [];
+
+//need to store and display previously searched cities cities as buttons.
+$("#brewerySearch").click(function () {
+
+    let searchCity = $('.dropBtn').val();
+    let cityDiv = $('<BUTTON>').append(searchCity)
+    $('#cityName').append(cityDiv);
+
+    console.log('yes', searchCity)
+
+    localStorage.setItem('city', searchCity);
+
+});
+//need to get the cities that have been searched to persist to the page, and when clicked, display the brewery list
