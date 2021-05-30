@@ -22,21 +22,40 @@ $("#brewerySearch").click(function () {
             } else {
                 console.log('success ', response);
                 for (let i = 0; i < response.length; i++) {
-                    console.log(response[i]);
-                    let cityDiv = $('<BUTTON>').append(response[i].name)
-                    $('#cityName').append(cityDiv);
+                    //Cody updated from button to li element here
+                    let cityDiv = $('<li>').append(response[i].name, response[i].website_url)
+                    $('#breweryName').append(cityDiv);
                     
-                    storedBrewery.push(response[i].name);
+                    storedBrewery.push(response[i].name, response[i].website_url);
                     localStorage.setItem('brewery', JSON.stringify(storedBrewery));
                 }
             }
         })
 });
-
+//is there a way to update this to where it only clears the breweries when we click clear, not the new city button as well?
 $('#clear').on('click', function() {
     localStorage.clear();
     location.reload()
+    
 })
+
+//function to store cities to local storage
+//var storedCity = (localStorage.getItem('city')) || [];
+
+//need to store and display previously searched cities cities as buttons.
+$("#brewerySearch").click(function () {
+
+    let searchCity = $('.dropBtn').val();
+    let cityDiv = $('<BUTTON>').append(searchCity)
+    $('#cityName').append(cityDiv);
+
+    console.log('yes', searchCity)
+
+    localStorage.setItem('city', searchCity);
+
+});
+//need to get the cities that have been searched to persist to the page, and when clicked, display the brewery list
+
 
 
 // Random Beer Generator
