@@ -67,17 +67,22 @@ $("#brewerySearch").click(function () {
 // Random Beer Generator
 
 // onclick function for button
+
+var randomBeer = JSON.parse(localStorage.getItem('beer')) || [];
+
 $('#random-beer').on('click', function() {
     //ajax code here with random api (No Params needed)
-    $.ajax({
-        url: 'https://api.punkapi.com/v2/beers/random',
-        method: 'GET'
-    })
-        // simple console.log to ensure response is returned in Console
-       .then(function(response) {
-            console.log(response);
-
+    $(function() {
+        $.ajax({
+            url: 'https://api.punkapi.com/v2/beers/random',
+            method: 'GET'
         })
+        .then(function(response) {
+            console.log(response);
+            let beerDiv = $('#response-container').append(response[0].name, response[0].website_url);
+            $('newBeer').append(beerDiv);
+        })
+    });
 });
     
 
