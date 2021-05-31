@@ -16,16 +16,21 @@
 #hero {
         text-align: center;
         color: white;
-        background-image: url("../assets/BForcev1.png");
+        background-image: url("../assets/BForceHdrv2.png");
         position: relative;
         background-position: center;
         background-repeat: no-repeat;
-        background-size: cover;
-        min-height: 225px;
+        background-size: contain;
+        min-height: 250px;
+        background-color:var(--secondary);
 }
 
 .list-header {
     font-weight: bold;
+}
+
+.breweryName {
+
 }
 
 .generator {
@@ -37,4 +42,8 @@
 
 #brewerySearch {
     background-color: var(--secondary);
+}
+
+#random-beer {
+    text-align: center;
 }
