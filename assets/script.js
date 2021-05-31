@@ -51,10 +51,16 @@ $("#brewerySearch").click(function () {
 
     console.log('yes', searchCity)
 
-    localStorage.setItem('city', searchCity);
+    //localStorage.setItem('city', searchCity);
+    saveCity(searchCity)
 
 });
+
+
 //need to get the cities that have been searched to persist to the page, and when clicked, display the brewery list
+//$('document').on('load', function() {
+    
+//})
 
 
 
