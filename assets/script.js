@@ -61,20 +61,32 @@ $("#brewerySearch").click(function () {
 // Random Beer Generator
 
 // onclick function for button
-
 var randomBeer = JSON.parse(localStorage.getItem('beer')) || [];
 
 $('#random-beer').on('click', function() {
-    //ajax code here with random api (No Params needed)
+
+    //ajax code here with random beer api (No Params needed)
     $(function() {
         $.ajax({
             url: 'https://api.punkapi.com/v2/beers/random',
             method: 'GET'
         })
         .then(function(response) {
+
+            let beerNameDiv = $('#beer-name').text('')
+            let beerDescriptionDiv = $('#beer-description').text('')
+            let beerTaglineDiv = $('#beer-tagline').text('')
+            let beerAbvDiv = $('#beer-abv').text('')
+
             console.log(response);
-            let beerDiv = $('#response-container').append(response[0].name, response[0].website_url);
-            $('newBeer').append(beerDiv);
+            beerNameDiv = $('#beer-name').text('Order This: ').append(response[0].name);
+            beerDescriptionDiv = $('#beer-description').text('Description: ').append(response[0].description)
+            beerTaglineDiv = $('#beer-tagline').text('This beer is a ').append(response[0].tagline)
+            beerAbvDiv = $('#beer-abv').text('ABV: ').append(response[0].abv)
+            $('newBeer').append(beerNameDiv, beerDescriptionDiv, beerAbvDiv, beerTaglineDiv);
+            
+            randomBeer.push(response[0].name, response[0].description)
+            localStorage.setItem('beer', JSON.stringify(randomBeer))
         })
     });
 });
