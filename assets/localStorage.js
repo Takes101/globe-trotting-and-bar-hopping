@@ -22,19 +22,19 @@ function saveCity(searchCity) {
     localStorage.setItem('cityName', JSON.stringify(cityFromLocalStorage))
 
     console.log(cityFromLocalStorage)
-
-    $(document).on('load', function(){
-        for (let i = 0; i < cityFromLocalStorage.length; i++) {
-            let cityBtn = $('<BUTTON>').append(cityFromLocalStorage[i])
-            $('#cityName').append(cityBtn);  
-        }
-        
-    })
-    //
 }
 
 //saveCity(searchCity)
 
-// function 
+function renderSearchResults() {
+    $(document).on('load', function(){
+        for (let i = 0; i < cityFromLocalStorage.length; i++) {
+            let cityBtn = $('<BUTTON>').append(cityFromLocalStorage[i])
+            $('#cityName').append(cityBtn);  
+        }   
+    })
+} 
+
+function appendSearchHistory()
 // renderButton()
 //when city buttons are clicked display brewery info from API(cynthia's function)
