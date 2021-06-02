@@ -36,6 +36,12 @@ $("#brewerySearch").click(function () {
                 storedBrewery.push(cityName);
                 localStorage.setItem('brewery', JSON.stringify(storedBrewery));
                  }
+                    //Cody updated from button to li element here
+                    let cityDiv = $('<li>').append(response[i].name + "  " + response[i].website_url)
+                    $('#breweryName').append(cityDiv);
+                    
+                    storedBrewery.push(response[i].name, response[i].website_url);
+                    localStorage.setItem('brewery', JSON.stringify(storedBrewery));
                 }
             })
         });
