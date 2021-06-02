@@ -1,5 +1,13 @@
 var storedBrewery = JSON.parse(localStorage.getItem('brewery')) || [];
+var storedCity = JSON.parse(localStorage.getItem('city')) || [];
 
+if(storedCity.length > 0){
+    storedCity.forEach(city => {
+        console.log(city)
+        let cityDiv = $('<BUTTON>').append(city)
+     $('#cityName').append(cityDiv);
+    });
+}
 
 $("#brewerySearch").click(function () {
 
@@ -42,8 +50,13 @@ $("#brewerySearch").click(function () {
                     storedBrewery.push(response[i].name, response[i].website_url);
                     localStorage.setItem('brewery', JSON.stringify(storedBrewery));
                 }
+                let cityDiv = $('<BUTTON>').append(searchCity)
+                $('#cityName').append(cityDiv);
             }
         })
+
+        storedCity.push(searchCity)
+        localStorage.setItem('city', JSON.stringify(storedCity))
 });
 
 // function createCitiesArray(){
@@ -76,22 +89,22 @@ $('#clear').on('click', function () {
 
 })
 
-//function to store cities to local storage
-//var storedCity = (localStorage.getItem('city')) || [];
+
+
 
 //need to store and display previously searched cities cities as buttons.
-$("#brewerySearch").click(function () {
+// $("#brewerySearch").click(function () {
 
-    let searchCity = $('.dropBtn').val();
-    let cityDiv = $('<BUTTON>').append(searchCity)
-    $('#cityName').append(cityDiv);
+//     let searchCity = $('.dropBtn').val();
+     let cityDiv = $('<BUTTON>').append(searchCity)
+     $('#cityName').append(cityDiv);
 
-    console.log('yes', searchCity)
+//     //console.log('yes', searchCity)
 
     //localStorage.setItem('city', searchCity);
     //saveCity(searchCity)
 
-});
+// });
 
 
 //need to get the cities that have been searched to persist to the page, and when clicked, display the brewery list
