@@ -16,21 +16,16 @@
 #hero {
         text-align: center;
         color: white;
-        background-image: url("../assets/BForceHdrv2.png");
+        background-image: url("../assets/BForceHdv3.png");
         position: relative;
         background-position: center;
         background-repeat: no-repeat;
-        background-size: contain;
-        min-height: 250px;
-        background-color:var(--secondary);
+        background-size: cover;
+        min-height: 370px;
 }
 
 .list-header {
     font-weight: bold;
-}
-
-.breweryName {
-
 }
 
 .generator {
