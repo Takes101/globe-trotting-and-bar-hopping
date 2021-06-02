@@ -35,6 +35,11 @@
     text-align: center;
 }
 
+p {
+    text-align: center;
+    color:var(--primary);
+    font-size: 20px;
+}
 #brewerySearch {
     background-color: var(--secondary);
 }
