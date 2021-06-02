@@ -20,18 +20,49 @@ $("#brewerySearch").click(function () {
             if (response == '') {
                 $('#inputError').text('Please insert the right city name or state')
             } else {
-                console.log('success ', response);
+                $("#breweryName").empty()
                 for (let i = 0; i < response.length; i++) {
-                    //Cody updated from button to li element here
-                    let cityDiv = $('<li>').append(response[i].name, response[i].website_url)
-                    $('#breweryName').append(cityDiv);
-                    
-                    storedBrewery.push(response[i].name, response[i].website_url);
-                    localStorage.setItem('brewery', JSON.stringify(storedBrewery));
+                    console.log("res",response[i]);
+                    var cityName = response[i].name;
+                    var cityWebSite = response[i].website_url;
+                    // displayCities(storedBrewery.length);
+                    // updateBreweries(cityName, cityWebSite);
+                    // createCitiesArray(storedBrewery.length);
+                //     console.log('success ', response[i]);
+                //     //Cody updated from button to li element here
+                let cityDiv = $('<li>').text(cityName)
+                $('#breweryName').append(cityDiv);
+                
+                storedBrewery.push(cityName);
+                localStorage.setItem('brewery', JSON.stringify(storedBrewery));
+                 }
                 }
-            }
-        })
-});
+            })
+        });
+        
+// function createCitiesArray(){
+//     $("#breweryName").empty();
+//     // for( var i = 0; storedBrewery.length; i++){
+//     //     console.log(storedBrewery[i])
+//     // }
+// }
+
+// function displayCities(){
+//     // var cities = storedBrewery[]
+// }
+
+// function updateBreweries(cityName, cityWebSite){
+//     var breweryObj = {
+//         name: "",
+//         website: ""
+//     }
+
+//     breweryObj.name = cityName;
+//     breweryObj.website = cityWebSite;
+//     storedBrewery.push(breweryObj);
+//     localStorage.setItem("brewery", JSON.stringify(storedBrewery));
+// }
+
 //is there a way to update this to where it only clears the breweries when we click clear, not the new city button as well?
 $('#clear').on('click', function() {
     localStorage.clear();
