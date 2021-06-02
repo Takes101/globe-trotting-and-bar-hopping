@@ -23,7 +23,7 @@ $("#brewerySearch").click(function () {
                 console.log('success ', response);
                 for (let i = 0; i < response.length; i++) {
                     //Cody updated from button to li element here
-                    let cityDiv = $('<li>').append(response[i].name, response[i].website_url)
+                    let cityDiv = $('<li>').append(response[i].name + "   " + response[i].website_url)
                     $('#breweryName').append(cityDiv);
                     
                     storedBrewery.push(response[i].name, response[i].website_url);
