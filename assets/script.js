@@ -96,8 +96,8 @@ $('#clear').on('click', function () {
 // $("#brewerySearch").click(function () {
 
 //     let searchCity = $('.dropBtn').val();
-     let cityDiv = $('<BUTTON>').append(searchCity)
-     $('#cityName').append(cityDiv);
+     //let cityDiv = $('<BUTTON>').append(searchCity)
+     //$('#cityName').append(cityDiv);
 
 //     //console.log('yes', searchCity)
 
