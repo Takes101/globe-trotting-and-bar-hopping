@@ -6,21 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <title>Brewed Force</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <link rel="stylesheet" href="assets/style.css" />
+    <title>Brewed Force</title>
 </head>
 
 <body>
-        <header class="mdl-layout__header mdl-layout__header--transparent" id="hero">
-            <div class="mdl-layout__header-row">
+    <header class="mdl-layout__header mdl-layout__header--transparent" id="hero">
+        <div class="mdl-layout__header-row">
             <!-- Title -->
-                <span class="mdl-layout-title"></span>
-            </div>
-        </header>
-        
+            <span class="mdl-layout-title"></span>
+        </div>
+    </header>
 
     <div class="mdl-grid">
         <div class="mdl-cell mdl-cell--4-col">
@@ -81,19 +80,20 @@
                             <option value="Wisconsin">Wisconsin</option>
                             <option value="Wyoming">Wyoming</option>
                         </select>
-                        <button id="brewerySearch" class="city-btn mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Search</button>
+                        <button id="brewerySearch"
+                            class="city-btn mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Search</button>
                         <div>
                             <p id="inputError" style="color:red"></p>
                         </div>
                     </div>
-                    
+
                 </div>
-                
+
                 <button id="clear">Delete City List</button>
             </div>
             <div id="cityName"></div>
         </div>
-                <!-- return pub/brewery info-->
+        <!-- return pub/brewery info-->
         <div class="mdl-cell mdl-cell--8-col" id="breweryName">
             <h2 class="list-header">Brewery Guide</h2>
             <div id="search-results"></div>
@@ -102,21 +102,22 @@
 
 
     <!-- return random beer generator-->
-    <div class="mdl-grid">
+    <div class="mdl-grid" id="roulette-grid">
         <div class="mdl-cell mdl-cell--10-col">
-        <h3 class="generator">Beer Roulette</h3>
-        <div id="response-container" class="response-container"></div>
-        <button id="random-beer" class="random-beer">Try Something New!</button>
+            <h3 class="generator">Beer Roulette</h3>
+                <p>Not sure what to order?</p>
+                <p>Press the button to find a random beer. Ask your local brewer if they have something similar on tap.</p>
+            <div id="response-container" class="response-container"></div>
+            <button id="random-beer" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored random-btn">Try Something New!</button>
             <div class="random-beer-info">
                 <div id="beer-name" class="beer-name"></div>
                 <div id="beer-tagline" class="beer-tagline"></div>
                 <div id="beer-abv" class="beer-abv"></div>
                 <div id="beer-description" class='beer-description'></div>
             </div>
-        </div>  
+        </div>
     </div>
 
-    <script src="assets/localStorage.js"></script>
     <script src="assets/script.js"></script>
 </body>
 

@@ -16,34 +16,44 @@
 #hero {
         text-align: center;
         color: white;
-        background-image: url("../assets/BForceHdrv2.png");
+        background-image: url("../assets/BForceHdv3.png");
         position: relative;
         background-position: center;
         background-repeat: no-repeat;
-        background-size: contain;
-        min-height: 250px;
-        background-color:var(--secondary);
+        background-size: cover;
+        min-height: 370px;
 }
 
 .list-header {
     font-weight: bold;
 }
 
-.breweryName {
-
-}
-
 .generator {
     color:var(--secondary);
     font-weight: bold;
-    margin-left: 24px;
     text-align: center;
 }
 
+p {
+    text-align: center;
+    color:var(--primary);
+    font-size: 20px;
+}
 #brewerySearch {
     background-color: var(--secondary);
 }
 
 #random-beer {
     text-align: center;
+}
+
+#roulette-grid {
+    border-top: 5px var(--secondary);
+
+}
+
+.mdl-button--raised.mdl-button--colored, .random-btn {
+    background-color: gold;
+    color:darkgoldenrod;
+    justify-items: center;
 }
