@@ -20,7 +20,7 @@ $("#brewerySearch").click(function () {
             if (response == '') {
                 $('#inputError').text('Please insert the right city name or state')
             } else {
-                console.log('success ', response);
+                //console.log('success ', response);
                 for (let i = 0; i < response.length; i++) {
                     //Cody updated from button to li element here
                     let cityDiv = $('<li>').append(response[i].name, response[i].website_url)
@@ -43,18 +43,18 @@ $('#clear').on('click', function() {
 //var storedCity = (localStorage.getItem('city')) || [];
 
 //need to store and display previously searched cities cities as buttons.
-$("#brewerySearch").click(function () {
+// $("#brewerySearch").click(function () {
 
-    let searchCity = $('.dropBtn').val();
-    let cityDiv = $('<BUTTON>').append(searchCity)
-    $('#cityName').append(cityDiv);
+//     let searchCity = $('.dropBtn').val();
+//     let cityDiv = $('<BUTTON>').append(searchCity)
+//     $('#cityName').append(cityDiv);
 
-    console.log('yes', searchCity)
+//     //console.log('yes', searchCity)
 
-    //localStorage.setItem('city', searchCity);
-    saveCity(searchCity)
+//     //localStorage.setItem('city', searchCity);
+//     saveCity(searchCity)
 
-});
+// });
 
 
 //need to get the cities that have been searched to persist to the page, and when clicked, display the brewery list
