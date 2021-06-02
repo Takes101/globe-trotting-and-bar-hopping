@@ -50,69 +50,20 @@ $("#brewerySearch").click(function () {
                     storedBrewery.push(response[i].name, response[i].website_url);
                     localStorage.setItem('brewery', JSON.stringify(storedBrewery));
                 }
-                let cityDiv = $('<BUTTON>').append(searchCity)
+                let cityDiv = $('<BUTTON>').append(searchCity + " " + searchState)
                 $('#cityName').append(cityDiv);
             }
         })
-
-        storedCity.push(searchCity)
+        //updated to display city and state in button
+        storedCity.push(searchCity + " " + searchState)
         localStorage.setItem('city', JSON.stringify(storedCity))
 });
 
-// function createCitiesArray(){
-//     $("#breweryName").empty();
-//     // for( var i = 0; storedBrewery.length; i++){
-//     //     console.log(storedBrewery[i])
-//     // }
-// }
-
-// function displayCities(){
-//     // var cities = storedBrewery[]
-// }
-
-// function updateBreweries(cityName, cityWebSite){
-//     var breweryObj = {
-//         name: "",
-//         website: ""
-//     }
-
-//     breweryObj.name = cityName;
-//     breweryObj.website = cityWebSite;
-//     storedBrewery.push(breweryObj);
-//     localStorage.setItem("brewery", JSON.stringify(storedBrewery));
-// }
-
-//is there a way to update this to where it only clears the breweries when we click clear, not the new city button as well?
 $('#clear').on('click', function () {
     localStorage.clear();
     location.reload()
 
 })
-
-
-
-
-//need to store and display previously searched cities cities as buttons.
-// $("#brewerySearch").click(function () {
-
-//     let searchCity = $('.dropBtn').val();
-     //let cityDiv = $('<BUTTON>').append(searchCity)
-     //$('#cityName').append(cityDiv);
-
-//     //console.log('yes', searchCity)
-
-    //localStorage.setItem('city', searchCity);
-    //saveCity(searchCity)
-
-// });
-
-
-//need to get the cities that have been searched to persist to the page, and when clicked, display the brewery list
-//$('document').on('load', function() {
-
-//})
-
-
 
 // Random Beer Generator
 
