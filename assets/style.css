@@ -31,7 +31,6 @@
 .generator {
     color:var(--secondary);
     font-weight: bold;
-    margin-left: 24px;
     text-align: center;
 }
 
