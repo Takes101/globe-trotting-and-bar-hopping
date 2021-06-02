@@ -42,3 +42,14 @@
 #random-beer {
     text-align: center;
 }
+
+#roulette-grid {
+    border-top: 5px var(--secondary);
+
+}
+
+.mdl-button--raised.mdl-button--colored, .random-btn {
+    background-color: gold;
+    color:darkgoldenrod;
+    justify-items: center;
+}
