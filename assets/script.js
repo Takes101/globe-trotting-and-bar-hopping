@@ -9,7 +9,7 @@ $("#brewerySearch").click(function () {
     if (searchCity === '') {
         $('#inputError').text('Please insert at least one city')
         return;
-    }   
+    }
 
 
     $.ajax({
@@ -20,32 +20,32 @@ $("#brewerySearch").click(function () {
             if (response == '') {
                 $('#inputError').text('Please insert the right city name or state')
             } else {
-                $("#breweryName").empty()
+                $("#search-results").empty()
                 for (let i = 0; i < response.length; i++) {
-                    console.log("res",response[i]);
+                    console.log("res", response[i]);
                     var cityName = response[i].name;
                     var cityWebSite = response[i].website_url;
                     // displayCities(storedBrewery.length);
                     // updateBreweries(cityName, cityWebSite);
                     // createCitiesArray(storedBrewery.length);
-                //     console.log('success ', response[i]);
-                //     //Cody updated from button to li element here
-                let cityDiv = $('<li>').text(cityName)
-                $('#breweryName').append(cityDiv);
-                
-                storedBrewery.push(cityName);
-                localStorage.setItem('brewery', JSON.stringify(storedBrewery));
-                 }
+                    //     console.log('success ', response[i]);
+                    //     //Cody updated from button to li element here
+                    //let cityDiv = $('<li>').text(cityName)
+                    //$('#breweryName').append(cityDiv);
+
+                    storedBrewery.push(cityName);
+                    localStorage.setItem('brewery', JSON.stringify(storedBrewery));
                     //Cody updated from button to li element here
                     let cityDiv = $('<li>').append(response[i].name + "   " + response[i].website_url)
-                    $('#breweryName').append(cityDiv);
-                    
+                    $('#search-results').append(cityDiv);
+
                     storedBrewery.push(response[i].name, response[i].website_url);
                     localStorage.setItem('brewery', JSON.stringify(storedBrewery));
                 }
-            })
-        });
-        
+            }
+        })
+});
+
 // function createCitiesArray(){
 //     $("#breweryName").empty();
 //     // for( var i = 0; storedBrewery.length; i++){
@@ -70,10 +70,10 @@ $("#brewerySearch").click(function () {
 // }
 
 //is there a way to update this to where it only clears the breweries when we click clear, not the new city button as well?
-$('#clear').on('click', function() {
+$('#clear').on('click', function () {
     localStorage.clear();
     location.reload()
-    
+
 })
 
 //function to store cities to local storage
@@ -89,14 +89,14 @@ $("#brewerySearch").click(function () {
     console.log('yes', searchCity)
 
     //localStorage.setItem('city', searchCity);
-    saveCity(searchCity)
+    //saveCity(searchCity)
 
 });
 
 
 //need to get the cities that have been searched to persist to the page, and when clicked, display the brewery list
 //$('document').on('load', function() {
-    
+
 //})
 
 
@@ -106,37 +106,37 @@ $("#brewerySearch").click(function () {
 // onclick function for button
 var randomBeer = JSON.parse(localStorage.getItem('beer')) || [];
 
-$('#random-beer').on('click', function() {
+$('#random-beer').on('click', function () {
 
     //ajax code here with random beer api (No Params needed)
-    $(function() {
+    $(function () {
         $.ajax({
             url: 'https://api.punkapi.com/v2/beers/random',
             method: 'GET'
         })
-        .then(function(response) {
+            .then(function (response) {
 
-            let beerNameDiv = $('#beer-name').text('')
-            let beerDescriptionDiv = $('#beer-description').text('')
-            let beerTaglineDiv = $('#beer-tagline').text('')
-            let beerAbvDiv = $('#beer-abv').text('')
+                let beerNameDiv = $('#beer-name').text('')
+                let beerDescriptionDiv = $('#beer-description').text('')
+                let beerTaglineDiv = $('#beer-tagline').text('')
+                let beerAbvDiv = $('#beer-abv').text('')
 
-            console.log(response);
-            beerNameDiv = $('#beer-name').text('Order This: ').append(response[0].name);
-            beerDescriptionDiv = $('#beer-description').text('Description: ').append(response[0].description)
-            beerTaglineDiv = $('#beer-tagline').text('This beer is a ').append(response[0].tagline)
-            beerAbvDiv = $('#beer-abv').text('ABV: ').append(response[0].abv)
-            $('newBeer').append(beerNameDiv, beerDescriptionDiv, beerAbvDiv, beerTaglineDiv);
-            
-            randomBeer.push(response[0].name, response[0].description)
-            localStorage.setItem('beer', JSON.stringify(randomBeer))
-        })
+                console.log(response);
+                beerNameDiv = $('#beer-name').text('Order This: ').append(response[0].name);
+                beerDescriptionDiv = $('#beer-description').text('Description: ').append(response[0].description)
+                beerTaglineDiv = $('#beer-tagline').text('This beer is a ').append(response[0].tagline)
+                beerAbvDiv = $('#beer-abv').text('ABV: ').append(response[0].abv)
+                $('newBeer').append(beerNameDiv, beerDescriptionDiv, beerAbvDiv, beerTaglineDiv);
+
+                randomBeer.push(response[0].name, response[0].description)
+                localStorage.setItem('beer', JSON.stringify(randomBeer))
+            })
     });
 });
-    
 
 
-    
-   
+
+
+
 
 
