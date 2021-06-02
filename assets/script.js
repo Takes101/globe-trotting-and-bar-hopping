@@ -44,15 +44,9 @@ $("#brewerySearch").click(function () {
                     storedBrewery.push(cityName);
                     localStorage.setItem('brewery', JSON.stringify(storedBrewery));
                     //Cody updated from button to li element here
-<<<<<<< HEAD
-                    let cityDiv = $('<li>').append(response[i].name + "  " + response[i].website_url)
-                    $('#breweryName').append(cityDiv);
-                    
-=======
                     let cityDiv = $('<li>').append(response[i].name + "   " + response[i].website_url)
                     $('#search-results').append(cityDiv);
 
->>>>>>> 9a3a6f1e42d41f54c91628efa293c57bd369a3f4
                     storedBrewery.push(response[i].name, response[i].website_url);
                     localStorage.setItem('brewery', JSON.stringify(storedBrewery));
                 }
