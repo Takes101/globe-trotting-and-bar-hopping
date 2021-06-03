@@ -19,96 +19,109 @@
             <!-- Title -->
             <span class="mdl-layout-title"></span>
         </div>
-    </header>
 
-    <div class="mdl-grid">
-        <div class="mdl-cell mdl-cell--4-col">
-            <div class="city-search">
-                <div class="dropdown">
-                    <div class="dropdown-content">
-                        <input type="text" class="dropBtn" placeholder="Enter City">
-                        <select class="select">
-                            <option value="Alabama">Alabama</option>
-                            <option value="Alaska">Alaska</option>
-                            <option value="Arizona">Arizona</option>
-                            <option value="Arkansas">Arkansas</option>
-                            <option value="California">California</option>
-                            <option value="Colorado">Colorado</option>
-                            <option value="Connecticut">Connecticut</option>
-                            <option value="Delaware">Delaware</option>
-                            <option value="District_Of_Columbia">District Of Columbia</option>
-                            <option value="Florida">Florida</option>
-                            <option value="Georgia">Georgia</option>
-                            <option value="Hawaii">Hawaii</option>
-                            <option value="Idaho">Idaho</option>
-                            <option value="Illinois">Illinois</option>
-                            <option value="Indiana">Indiana</option>
-                            <option value="Iowa">Iowa</option>
-                            <option value="Kansas">Kansas</option>
-                            <option value="Kentucky">Kentucky</option>
-                            <option value="Louisiana">Louisiana</option>
-                            <option value="Maine">Maine</option>
-                            <option value="Maryland">Maryland</option>
-                            <option value="Massachusetts">Massachusetts</option>
-                            <option value="Michigan">Michigan</option>
-                            <option value="Minnesota">Minnesota</option>
-                            <option value="Mississippi">Mississippi</option>
-                            <option value="Missouri">Missouri</option>
-                            <option value="Montana">Montana</option>
-                            <option value="Nebraska">Nebraska</option>
-                            <option value="Nevada">Nevada</option>
-                            <option value="New_Hampshire">New Hampshire</option>
-                            <option value="New_Jersey">New Jersey</option>
-                            <option value="New_Mexico">New Mexico</option>
-                            <option value="New_York">New York</option>
-                            <option value="North_Carolina">North Carolina</option>
-                            <option value="North_Dakota">North Dakota</option>
-                            <option value="Ohio">Ohio</option>
-                            <option value="Oklahoma">Oklahoma</option>
-                            <option value="Oregon">Oregon</option>
-                            <option value="Pennsylvania">Pennsylvania</option>
-                            <option value="Rhode_Island">Rhode Island</option>
-                            <option value="South_Carolina">South Carolina</option>
-                            <option value="South_Dakota">South Dakota</option>
-                            <option value="Tennesse">Tennessee</option>
-                            <option value="Texas">Texas</option>
-                            <option value="Utah">Utah</option>
-                            <option value="Vermont">Vermont</option>
-                            <option value="Virginia">Virginia</option>
-                            <option value="Washington">Washington</option>
-                            <option value="West_Virginia">West Virginia</option>
-                            <option value="Wisconsin">Wisconsin</option>
-                            <option value="Wyoming">Wyoming</option>
-                        </select>
-                        <button id="brewerySearch"
-                            class="city-btn mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Search</button>
-                        <div>
-                            <p id="inputError" style="color:red"></p>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <div class="city-search">
+                        <div class="dropdown">
+                            <div class="dropdown-content">
+                                <input type="text" class="dropBtn" placeholder="Enter City">
+                                <select class="select">
+                                    <option value="Alabama">Alabama</option>
+                                    <option value="Alaska">Alaska</option>
+                                    <option value="Arizona">Arizona</option>
+                                    <option value="Arkansas">Arkansas</option>
+                                    <option value="California">California</option>
+                                    <option value="Colorado">Colorado</option>
+                                    <option value="Connecticut">Connecticut</option>
+                                    <option value="Delaware">Delaware</option>
+                                    <option value="District_Of_Columbia">District Of Columbia</option>
+                                    <option value="Florida">Florida</option>
+                                    <option value="Georgia">Georgia</option>
+                                    <option value="Hawaii">Hawaii</option>
+                                    <option value="Idaho">Idaho</option>
+                                    <option value="Illinois">Illinois</option>
+                                    <option value="Indiana">Indiana</option>
+                                    <option value="Iowa">Iowa</option>
+                                    <option value="Kansas">Kansas</option>
+                                    <option value="Kentucky">Kentucky</option>
+                                    <option value="Louisiana">Louisiana</option>
+                                    <option value="Maine">Maine</option>
+                                    <option value="Maryland">Maryland</option>
+                                    <option value="Massachusetts">Massachusetts</option>
+                                    <option value="Michigan">Michigan</option>
+                                    <option value="Minnesota">Minnesota</option>
+                                    <option value="Mississippi">Mississippi</option>
+                                    <option value="Missouri">Missouri</option>
+                                    <option value="Montana">Montana</option>
+                                    <option value="Nebraska">Nebraska</option>
+                                    <option value="Nevada">Nevada</option>
+                                    <option value="New_Hampshire">New Hampshire</option>
+                                    <option value="New_Jersey">New Jersey</option>
+                                    <option value="New_Mexico">New Mexico</option>
+                                    <option value="New_York">New York</option>
+                                    <option value="North_Carolina">North Carolina</option>
+                                    <option value="North_Dakota">North Dakota</option>
+                                    <option value="Ohio">Ohio</option>
+                                    <option value="Oklahoma">Oklahoma</option>
+                                    <option value="Oregon">Oregon</option>
+                                    <option value="Pennsylvania">Pennsylvania</option>
+                                    <option value="Rhode_Island">Rhode Island</option>
+                                    <option value="South_Carolina">South Carolina</option>
+                                    <option value="South_Dakota">South Dakota</option>
+                                    <option value="Tennesse">Tennessee</option>
+                                    <option value="Texas">Texas</option>
+                                    <option value="Utah">Utah</option>
+                                    <option value="Vermont">Vermont</option>
+                                    <option value="Virginia">Virginia</option>
+                                    <option value="Washington">Washington</option>
+                                    <option value="West_Virginia">West Virginia</option>
+                                    <option value="Wisconsin">Wisconsin</option>
+                                    <option value="Wyoming">Wyoming</option>
+                                </select>
+
+                                <div class="col-sm">
+                                    <button id="brewerySearch"
+                                        class="city-btn mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Search</button>
+                                    <div>
+                                        <p id="inputError" style="color:red"></p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
                 </div>
-
-                <button id="clear">Delete City List</button>
             </div>
+        </div>
+    </header>
+</body>
+
+<!-- return pub/brewery info-->
+<div>
+    <div class="col-sm" id="breweryName">
+        <h2 class="list-header">Brewery Guide</h2>
+        <div class="col-sm">
+            <button id="clear">Delete City List</button>
             <div id="cityName"></div>
         </div>
-        <!-- return pub/brewery info-->
-        <div class="mdl-cell mdl-cell--8-col" id="breweryName">
-            <h2 class="list-header">Brewery Guide</h2>
-            <div id="search-results"></div>
-        </div>
+        <div id="search-results"></div>
     </div>
 
 
     <!-- return random beer generator-->
     <div class="mdl-grid" id="roulette-grid">
-        <div class="mdl-cell mdl-cell--10-col">
+        <div class="col-sm">
             <h3 class="generator">Beer Roulette</h3>
-                <p>Not sure what to order?</p>
-                <p>Press the button to find a random beer. Ask your local brewer if they have something similar on tap.</p>
+            <p>Unsure of what to order? Try our random beer generator!</p>
             <div id="response-container" class="response-container"></div>
-            <button id="random-beer" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored random-btn">Try Something New!</button>
+            <button id="random-beer"
+                class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored random-btn">Beer
+                Me!</button>
+        </div>
+    </div>
+    <div class="mdl-grid" id="roulette-grid">
+        <div>
             <div class="random-beer-info">
                 <div id="beer-name" class="beer-name"></div>
                 <div id="beer-tagline" class="beer-tagline"></div>
@@ -116,9 +129,7 @@
                 <div id="beer-description" class='beer-description'></div>
             </div>
         </div>
-    </div>
-
-    <script src="assets/script.js"></script>
-</body>
+        <script src="assets/script.js"></script>
+        </body>
 
 </html>
