@@ -4,15 +4,15 @@ var storedCity = JSON.parse(localStorage.getItem('city')) || [];
 if(storedCity.length > 0){
     storedCity.forEach(city => {
         console.log(city)
-        let cityDiv = $('<BUTTON>').append(city)
+        let cityDiv = $('<BUTTON>').append(city.city + " " + city.state)
+        cityDiv.click(function () {
+            getAPIData(city.city, city.state)
+        });
      $('#cityName').append(cityDiv);
     });
 }
 
-$("#brewerySearch").click(function () {
-
-    let searchCity = $('.dropBtn').val();
-    let searchState = $('.select').find(":selected").val();
+function getAPIData (searchCity, searchState) {
 
     if (searchCity === '') {
         $('#inputError').text('Please insert at least one city')
@@ -40,23 +40,47 @@ $("#brewerySearch").click(function () {
                     //     //Cody updated from button to li element here
                     //let cityDiv = $('<li>').text(cityName)
                     //$('#breweryName').append(cityDiv);
+                    
+                    // brewery object to return name and url jl
+                    var breweryData = {
+                        name: response[i].name,
+                        url: response[i].website_url
+                    }
 
-                    storedBrewery.push(cityName);
+                    storedBrewery.push(breweryData);
                     localStorage.setItem('brewery', JSON.stringify(storedBrewery));
                     //Cody updated from button to li element here
                     let cityDiv = $('<li>').append(response[i].name + "   " + response[i].website_url)
                     $('#search-results').append(cityDiv);
 
-                    storedBrewery.push(response[i].name, response[i].website_url);
-                    localStorage.setItem('brewery', JSON.stringify(storedBrewery));
+                    //creating extra values in index = null
+                    // storedBrewery.push(response[i].name, response[i].website_url);
+                    // localStorage.setItem('brewery', JSON.stringify(storedBrewery));
                 }
                 let cityDiv = $('<BUTTON>').append(searchCity + " " + searchState)
                 $('#cityName').append(cityDiv);
             }
         })
+
+        //city and state object
+        var cityState = {
+            city: searchCity,
+            state: searchState
+        }
+
+        // before you push the cityState to storedCity, try to loop through storedCity first
+        // and check if the city and state already exists
+
         //updated to display city and state in button
-        storedCity.push(searchCity + " " + searchState)
+        storedCity.push(cityState)
         localStorage.setItem('city', JSON.stringify(storedCity))
+}
+
+$("#brewerySearch").click(function() {
+    let searchCity = $('.dropBtn').val();
+    let searchState = $('.select').find(":selected").val();
+
+    getAPIData(searchCity, searchState)
 });
 
 $('#clear').on('click', function () {
