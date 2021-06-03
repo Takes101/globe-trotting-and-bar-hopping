@@ -97,45 +97,39 @@
     </header>
 </body>
 
-                <div class="mdl-grid">
-                    <div class="mdl-cell mdl-cell--4-col">
-
-<div class="col-sm">
-    <!-- return pub/brewery info-->
-    <div class="mdl-cell mdl-cell--8-col" id="breweryName">
+<!-- return pub/brewery info-->
+<div>
+    <div class="col-sm" id="breweryName">
         <h2 class="list-header">Brewery Guide</h2>
+        <div class="col-sm">
+            <button id="clear">Delete City List</button>
+            <div id="cityName"></div>
+        </div>
         <div id="search-results"></div>
     </div>
-</div>
-
-<div class="col-sm">
-    <button id="clear">Delete City List</button>
-</div>
-<div id="cityName"></div>
-</div>
 
 
-        <!-- return random beer generator-->
-        <div class="mdl-grid" id="roulette-grid">
-            <div class="mdl-cell mdl-cell--10-col">
-                <h3 class="generator">Beer Roulette</h3>
-                <p>Not sure what to order?</p>
-                <p>Press the button to find a random beer. Ask your local brewer if they have something similar on tap.
-                </p>
-                <div id="response-container" class="response-container"></div>
-                <button id="random-beer"
-                    class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored random-btn">Try Something
-                    New!</button>
-                <div class="random-beer-info">
-                    <div id="beer-name" class="beer-name"></div>
-                    <div id="beer-tagline" class="beer-tagline"></div>
-                    <div id="beer-abv" class="beer-abv"></div>
-                    <div id="beer-description" class='beer-description'></div>
-                </div>
+    <!-- return random beer generator-->
+    <div class="mdl-grid" id="roulette-grid">
+        <div class="col-sm">
+            <h3 class="generator">Beer Roulette</h3>
+            <p>Unsure of what to order? Try our random beer generator!</p>
+            <div id="response-container" class="response-container"></div>
+            <button id="random-beer"
+                class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored random-btn">Beer
+                Me!</button>
+        </div>
+    </div>
+    <div class="mdl-grid" id="roulette-grid">
+        <div>
+            <div class="random-beer-info">
+                <div id="beer-name" class="beer-name"></div>
+                <div id="beer-tagline" class="beer-tagline"></div>
+                <div id="beer-abv" class="beer-abv"></div>
+                <div id="beer-description" class='beer-description'></div>
             </div>
         </div>
-
         <script src="assets/script.js"></script>
-</body>
+        </body>
 
 </html>
