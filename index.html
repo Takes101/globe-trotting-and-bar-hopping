@@ -22,7 +22,7 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-sm">
+                <div class="mdl-cell mdl-cell--12-col">
                     <div class="city-search">
                         <div class="dropdown">
                             <div class="dropdown-content">
@@ -99,25 +99,30 @@
 
 <!-- return pub/brewery info-->
 <div>
-    <div class="col-sm" id="breweryName">
-        <h2 class="list-header">Brewery Guide</h2>
-        <div class="col-sm">
-            <button id="clear">Delete City List</button>
-            <div id="cityName"></div>
+    <div class="mdl-grid-header" id="breweryName">
+        <div class="mdl-cell--12-col">
+            <h2 class="list-header">Brewery Guide</h2>
         </div>
-        <div id="search-results"></div>
+        <button id="clear">Delete City List</button>
+    </div> 
+    <div class="mdl-grid-brewers" id="brewery-list">
+            <div class="mdl-cell mdl-cell--12-col brewery-list">
+                <div id="cityName"></div>
+                <div id="search-results"></div>
+            </div>
     </div>
+
 
 
     <!-- return random beer generator-->
     <div class="mdl-grid" id="roulette-grid">
-        <div class="col-sm">
+        <div class="mdl-cell mdl-cell--12-col">
             <h3 class="generator">Beer Roulette</h3>
             <p>Unsure of what to order? Try our random beer generator!</p>
             <div id="response-container" class="response-container"></div>
             <button id="random-beer"
-                class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored random-btn">Beer
-                Me!</button>
+                class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored random-btn">Beer Me!
+            </button>
         </div>
     </div>
     <div class="mdl-grid" id="roulette-grid">
