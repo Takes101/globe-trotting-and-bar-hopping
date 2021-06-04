@@ -33,6 +33,9 @@
 .list-header {
     text-align: center;
     font-weight: bold;
+    font-family: 'Alfa';
+    border: 5px solid var(--secondary);
+
 }
 
 .brewery-list {
@@ -47,14 +50,18 @@
 }
 
 .generator {
-    color:var(--secondary);
+    color:white;
+    text-shadow: 2px 2px var(--primary);
+    font-family: 'Alfa';
     font-weight: bold;
     text-align: center;
+    font-size: 46px;
 }
 
 p {
     text-align: center;
-    color:var(--primary);
+    color:white;
+    text-shadow: 2px 1px var(--primary);
     font-size: 20px;
 }
 .mdl-grid-brewers, #brewerySearch {
@@ -63,13 +70,22 @@ p {
 
 #clear {
     margin-left: 10px;
+    background-color: var(--secondary);
+    font-family: 'Lato';
+    font-size: 15px;
 }
 #random-beer {
-    text-align: center;
+    text-align: center; 
+}
+
+#roulette {
+    background-image: url("./pradnyalGandhiCrop.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:auto;
 }
 
 #roulette-grid {
-    border-top: 5px var(--secondary);
 
 }
 
