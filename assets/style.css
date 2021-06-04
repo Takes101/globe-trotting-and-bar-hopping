@@ -12,6 +12,7 @@
     margin-bottom: 15px;
 }
 
+
 #hero {
         text-align: center;
         color: white;
@@ -30,6 +31,10 @@
     justify-content: flex-end;
 }
 
+#cityName{
+    background-color: gold;
+    font-size: medium;
+}
 .list-header {
     text-align: center;
     font-weight: bold;
@@ -40,7 +45,8 @@
 
 .brewery-list {
     display: flex;
-    flex-direction: row
+    flex-direction: row;
+    margin: 5px 75px;
 }
 
 #search-results, #cityName {
@@ -86,11 +92,13 @@ p {
 }
 
 #roulette-grid {
-
+    margin: 10px 75px;
+    background-color: burlywood;
 }
 
 .mdl-button--raised.mdl-button--colored, .random-btn {
     background-color: gold;
     color:darkgoldenrod;
     justify-items: center;
+    margin-left: 75px;
 }
