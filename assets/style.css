@@ -5,7 +5,6 @@
 }
 
 .mdl-grid {
-    flex-wrap: nowrap;
     border: 3px black;
     margin-left: 15px;
 }
@@ -24,8 +23,27 @@
         min-height: 370px;
 }
 
+.dropdown-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
 .list-header {
+    text-align: center;
     font-weight: bold;
+}
+
+.brewery-list {
+    display: flex;
+    flex-direction: row
+}
+
+#search-results, #cityName {
+    background-color: var(--secondary);
+    list-style-type: none;
+    margin: 5px 15px;
 }
 
 .generator {
@@ -39,10 +57,13 @@ p {
     color:var(--primary);
     font-size: 20px;
 }
-#brewerySearch {
+.mdl-grid-brewers, #brewerySearch {
     background-color: var(--secondary);
 }
 
+#clear {
+    margin-left: 10px;
+}
 #random-beer {
     text-align: center;
 }
