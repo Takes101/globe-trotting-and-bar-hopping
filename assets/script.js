@@ -49,9 +49,14 @@ function getAPIData (searchCity, searchState) {
 
                     storedBrewery.push(breweryData);
                     localStorage.setItem('brewery', JSON.stringify(storedBrewery));
+                    //creating a href for web url
+                    var breweryUrl = $('<a>')
+                    breweryUrl.attr('href', response[i].website_url)
+                    breweryUrl.attr('target', '_blank')
                     //Cody updated from button to li element here
-                    let cityDiv = $('<li>').append(response[i].name + "   " + response[i].website_url)
-                    $('#search-results').append(cityDiv);
+                    let cityDiv = $('<li>').append(response[i].name)
+                    breweryUrl.append(cityDiv)
+                    $('#search-results').append(breweryUrl);
 
                     //creating extra values in index = null
                     // storedBrewery.push(response[i].name, response[i].website_url);

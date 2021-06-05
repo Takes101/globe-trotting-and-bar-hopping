@@ -4,6 +4,14 @@
     --tertiary: #ffffff;
 }
 
+body {
+    background-color:burlywood;
+    background-image: url("./pradnyal2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
 .mdl-grid {
     border: 3px black;
     margin-left: 15px;
@@ -11,7 +19,6 @@
 .mdl-cell--8-col {
     margin-bottom: 15px;
 }
-
 
 #hero {
         text-align: center;
@@ -31,16 +38,20 @@
     justify-content: flex-end;
 }
 
-#cityName{
+#cityName {
     background-color: gold;
     font-size: medium;
 }
+
 .list-header {
+    background-color: var(--primary);
     text-align: center;
     font-weight: bold;
     font-family: 'Alfa';
-    border: 5px solid var(--secondary);
-
+    border: 5px solid var(--primary);
+    margin-left: 10px;
+    color:white;
+    text-shadow: 2px 1px var(--primary);
 }
 
 .brewery-list {
@@ -82,18 +93,19 @@ p {
 }
 #random-beer {
     text-align: center; 
+    color:white;
 }
 
 #roulette {
     background-image: url("./pradnyalGandhiCrop.png");
     background-position: center;
     background-repeat: no-repeat;
-    background-size:auto;
+    background-size:750px;
 }
 
 #roulette-grid {
     margin: 10px 75px;
-    background-color: burlywood;
+    background-color:var(--secondary);
 }
 
 .mdl-button--raised.mdl-button--colored, .random-btn {
@@ -101,4 +113,18 @@ p {
     color:darkgoldenrod;
     justify-items: center;
     margin-left: 75px;
+    border-radius: 5px;
+}
+
+button {
+    background-color: var(--primary);
+    font-size: 16px;
+    color:white;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 1024px){
+    .mdl-layout__header {
+        display:flex;
+    }  
 }
