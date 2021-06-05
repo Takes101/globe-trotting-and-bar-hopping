@@ -66,6 +66,22 @@ body {
     margin: 5px 15px;
 }
 
+a, li {
+    font-size: 18px;;
+}
+
+a {
+    color:black;
+}
+
+a:hover {
+    color:ghostwhite;
+}
+
+a:visited {
+    color: #39a4e7;
+}
+
 .generator {
     color:white;
     text-shadow: 2px 2px var(--primary);
@@ -125,6 +141,14 @@ button {
 
 @media screen and (max-width: 1024px){
     .mdl-layout__header {
-        display:flex;
+        display:flex;  
     }  
+}
+
+@media (max-width: 479px) {
+    .brewery-list, .container {
+        display: grid;
+        margin: 0;
+        padding: 0;
+    }
 }
